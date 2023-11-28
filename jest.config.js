@@ -8,8 +8,7 @@ module.exports = {
     '!src/lib/registry.tsx',
     '!src/types/**',
     '!src/styles/**',
-    '!src/**/stories.tsx',
-    '!src/utils/**'
+    '!src/**/stories.tsx'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
@@ -20,6 +19,7 @@ module.exports = {
   // v6 of styled-components doesn't inject styles in test environment
   // we should to force it to use the browser version
   moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
     '^styled-components':
       'styled-components/dist/styled-components.browser.cjs.js'
   }
