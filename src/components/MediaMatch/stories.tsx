@@ -13,3 +13,9 @@ export const Desktop = () => (
 export const Mobile = () => (
   <MediaMatch $lessThan="medium">Only on Mobile</MediaMatch>
 )
+
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
