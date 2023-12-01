@@ -32,13 +32,20 @@ export const MenuGroup = styled.div`
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
+    align-items: center;
 
     > div {
       margin-left: ${theme.spacings.xsmall};
     }
   `}
 `
-export const MenuNav = styled.div``
+export const MenuNav = styled.div`
+  ${({ theme }) => css`
+    ${media.greaterThan('medium')`
+      margin-left: ${theme.spacings.medium}
+    `}
+  `}
+`
 
 //como o link vai ficar  no mobile
 export const MenuLink = styled.a`
@@ -48,6 +55,7 @@ export const MenuLink = styled.a`
     margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
     text-align: center;
+    color: ${theme.colors.white};
 
     //animação quando passar o mouse
     &:hover {
